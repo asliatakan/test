@@ -5,9 +5,9 @@ import java.util.Locale;
 
 public class Price {
 
-	private int value;
+	private long value;
 
-	public Price(int value) {
+	public Price(long value) {
 		this.value = value;
 	}
 
@@ -15,7 +15,7 @@ public class Price {
 		this(0);
 	}
 
-	public int getValue() {
+	public long getValue() {
 		return value;
 	}
 
@@ -27,5 +27,9 @@ public class Price {
 	public String toString() {
 		NumberFormat currencyFormatter = NumberFormat.getCurrencyInstance(Locale.UK);
 		return currencyFormatter.format(value / 100.0);
+	}
+
+	public Price multiply(long count) {
+		return new Price(this.value * count);
 	}
 }

@@ -1,6 +1,7 @@
 package co.exercise;
 
 import java.util.List;
+import java.util.Objects;
 import java.util.stream.Stream;
 
 public final class ShoppingCart {
@@ -8,7 +9,7 @@ public final class ShoppingCart {
 	private final List<Item> items;
 
 	public ShoppingCart(List<Item> items) {
-		this.items = items;
+		this.items = Objects.requireNonNull(items);
 	}
 
 	public final Price checkout() {
