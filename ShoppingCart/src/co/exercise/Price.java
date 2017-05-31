@@ -32,4 +32,8 @@ public class Price {
 	public Price multiply(long count) {
 		return new Price(this.value * count);
 	}
+
+	public Price minus(Price other) {
+		return new Price(this.value - other.getValue());
+	}
 }

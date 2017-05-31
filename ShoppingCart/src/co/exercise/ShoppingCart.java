@@ -16,7 +16,11 @@ public final class ShoppingCart {
 		Stream<Item> stream = items.stream();
 		Price total = stream.collect(Price::new, (result, element) -> result.add(element.getPrice()),
 				(result, element) -> result.toString());
-		return total;
+		Price offers = Items.OFFERS.entrySet().stream().collect(Price::new,
+				(result, element) -> result.add(element.getValue().getOffer(items, element.getKey())),
+				(result, element) -> result.toString());
+		return total.minus(offers);
+
 	}
 
 }

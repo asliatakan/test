@@ -27,8 +27,8 @@ public class ShoppingCartTest {
 		assertEquals(oneCart.checkout().getValue(), 85);
 		assertEquals(oneCart.checkout().toString(), "£0.85");
 		
-		assertEquals(manyCart.checkout().getValue(), 230);
-		assertEquals(manyCart.checkout().toString(), "£2.30");
+		assertEquals(manyCart.checkout().getValue(), 170);
+		assertEquals(manyCart.checkout().toString(), "£1.70");
 	}
 
 }
