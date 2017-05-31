@@ -1,19 +1,19 @@
 package co.exercise;
 
 public class Items {
-	public static final Item APPLE = new Item(60);
+	public static final Item APPLE = new Item(new Price(60));
 	
-	public static final Item ORANGE = new Item(25);
+	public static final Item ORANGE = new Item(new Price(25));
 }
 
 class Item {
-	private int price;
+	private Price price;
 
-	public Item(int price) {
+	Item(Price price) {
 		this.price = price;
 	}
 
-	public int getPrice() {
+	public Price getPrice() {
 		return price;
 	}
 }

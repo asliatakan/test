@@ -21,9 +21,14 @@ public class ShoppingCartTest {
 
 	@Test
 	public void test() {
-		assertEquals(emptyCart.checkout(), 0);
-		assertEquals(oneCart.checkout(), 85);
-		assertEquals(manyCart.checkout(), 230);
+		assertEquals(emptyCart.checkout().getValue(), 0);
+		assertEquals(emptyCart.checkout().toString(), "£0.00");
+		
+		assertEquals(oneCart.checkout().getValue(), 85);
+		assertEquals(oneCart.checkout().toString(), "£0.85");
+		
+		assertEquals(manyCart.checkout().getValue(), 230);
+		assertEquals(manyCart.checkout().toString(), "£2.30");
 	}
 
 }
